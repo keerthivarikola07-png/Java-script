@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,11 +5,12 @@
     <title>Document</title>
 </head>
 <body>
+    <p>Random Password: <span id="show"></span></p>
     <button onclick="generate()">Generate Password</button>
     <script>
         function generate(){
             var 
-            passwordList="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@*&$#"
+            passwordList="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@*&$"
             password=[]
             for(i=1;i<=6;i++){
                 var randomnumber=Math.floor(Math.random()*passwordList.length)
@@ -19,7 +19,8 @@
             }
             password=password.join("")
             console.log(password)
-        }
-    </script>
+            document.getElementById("show").innerHTML=password
+        }
+    </script>
 </body>
 </html>
